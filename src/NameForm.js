@@ -23,9 +23,8 @@ export default class NameForm extends Component {
     }
 
     render() {
-        const firstName = this.props.firstName;
-        const lastName = this.props.lastName;
-        const pronouns = this.props.pronouns;
+        const { firstName, lastName, pronouns } = this.props;
+
         return (
             <Form>
                 <Form.Group as={Row} controlId="formGroupFirstName">

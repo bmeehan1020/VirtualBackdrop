@@ -26,9 +26,7 @@ class App extends Component {
   }
 
   render() {
-    const firstName = this.state.firstName;
-    const lastName = this.state.lastName;
-    const pronouns = this.state.pronouns;
+    const { firstName, lastName, pronouns } = this.state;
 
     return (
       <div className="App" >

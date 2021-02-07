@@ -1,6 +1,7 @@
 import './App.css';
 import React, { Component } from 'react'
 import NameForm from './NameForm';
+import Canvas from './Canvas';
 
 class App extends Component {
   constructor(props) {
@@ -41,6 +42,11 @@ class App extends Component {
             onLastNameChange={this.handleLastNameChange}
             pronouns={pronouns}
             onPronounsChange={this.handlePronounsChange}
+          />
+          <Canvas
+            firstName={firstName}
+            lastName={lastName}
+            pronouns={pronouns}
           />
         </div>
       </div>

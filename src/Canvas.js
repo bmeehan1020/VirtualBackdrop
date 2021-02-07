@@ -2,6 +2,7 @@ import React, { useRef, useEffect } from 'react';
 
 function Canvas(props) {
     const canvasRef = useRef(null);
+    const previewRef = useRef(null);
 
     useEffect(() => {
         const canvas = canvasRef.current;
@@ -13,8 +14,10 @@ function Canvas(props) {
         context.clearRect(0, 0, window.innerWidth, window.innerHeight);
 
         // draw background image
-        var img = new Image();
-        img.src = 'https://virtualbackdrop.s3.amazonaws.com/wit_background_5.png';
+        const imgURL = 'https://virtualbackdrop.s3.amazonaws.com/wit_background_5.png';
+        const img = new Image();
+        img.crossOrigin = 'Anonymous';
+        img.src = imgURL;
         context.drawImage(img, 0, 0, width, height);
 
         context.textAlign = 'right';
@@ -26,8 +29,18 @@ function Canvas(props) {
         context.font = 'bold 100px Arial';
         context.fillText(props.lastName, width - 50, 270, width / 2);
         // drawPronouns
-        context.font = 'bold 50px Arial';
-        context.fillText(`(${props.pronouns})`, width - 50, 350, width / 2);
+        if (props.pronouns) {
+            context.font = 'bold 50px Arial';
+            context.fillText(`(${props.pronouns})`, width - 50, 350, width / 2);
+        }
+
+        //convert to PNG
+        const preview = previewRef.current;
+        preview.innerHTML = '';
+        const canvasImg = new Image();
+        canvasImg.style = "max-width: 100%; max-height: 100%;";
+        canvasImg.src = canvas.toDataURL('image/png');
+        preview.appendChild(canvasImg);
     })
 
     const rescaleCanvas = (canvas, context) => {
@@ -57,7 +70,10 @@ function Canvas(props) {
                 ref={canvasRef}
                 style={{ width: 1920, height: 1080, display: 'none' }}
             />
-            <div id="canvasImage"></div>
+            <div
+                ref={previewRef}
+                style={{ width: 800, height: 600 }}
+            />
         </div>
     )
 }

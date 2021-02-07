@@ -37,18 +37,22 @@ function Canvas(props) {
         // drawFirstName
         // drawLastName
         // drawPronouns
+        context.textAlign = 'right';
         context.font = 'bold 48px Arial';
         context.fillStyle = '#FFF';
-        context.fillText(props.firstName, 10, 50);
+        context.fillText(props.firstName, width - 90, 160, width - 400);
 
 
     })
 
     return (
-        <canvas
-            ref={canvasRef}
-            style={{ width: 800, height: 600 }}
-        />
+        <div>
+            <canvas
+                ref={canvasRef}
+                style={{ width: 1920, height: 1080, display: 'none' }}
+            />
+            <div id="canvasImage"></div>
+        </div>
     )
 }
 

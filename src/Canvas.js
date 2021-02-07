@@ -14,7 +14,7 @@ function Canvas(props) {
 
         // draw background image
         var img = new Image();
-        img.src = 'https://virtualbackdrop.s3.amazonaws.com/wit_background_4.png';
+        img.src = 'https://virtualbackdrop.s3.amazonaws.com/wit_background_5.png';
         context.drawImage(img, 0, 0, width, height);
 
         context.textAlign = 'right';
@@ -27,18 +27,16 @@ function Canvas(props) {
         context.fillText(props.lastName, width - 50, 270, width / 2);
         // drawPronouns
         context.font = 'bold 50px Arial';
-        context.fillText(`(${props.pronouns})`, width - 50, 360, width / 2);
+        context.fillText(`(${props.pronouns})`, width - 50, 350, width / 2);
     })
 
     const rescaleCanvas = (canvas, context) => {
         const ratio = getPixelRatio(context);
-
         const width = getComputedStyle(canvas).getPropertyValue('width').slice(0, -2);
         const height = getComputedStyle(canvas).getPropertyValue('height').slice(0, -2);
         canvas.width = width * ratio;
         canvas.height = height * ratio;
         context.scale(ratio, ratio);
-
         return [width, height];
     };
 
@@ -50,7 +48,6 @@ function Canvas(props) {
             context.msBackingStorePixelRatio ||
             context.oBackingStorePixelRatio ||
             1;
-
         return (window.devicePixelRatio || 1) / backingStore;
     };
 

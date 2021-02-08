@@ -2,6 +2,7 @@ import './App.css';
 import React, { Component } from 'react'
 import NameForm from './NameForm';
 import Canvas from './Canvas';
+import { Container, Row, Col, Button } from 'react-bootstrap';
 
 class App extends Component {
   constructor(props) {
@@ -34,21 +35,28 @@ class App extends Component {
         <header className="App-header">
           <h1>WIT Remote Background Generator</h1>
         </header>
-        <div className="App-body">
-          <NameForm
-            firstName={firstName}
-            onFirstNameChange={this.handleFirstNameChange}
-            lastName={lastName}
-            onLastNameChange={this.handleLastNameChange}
-            pronouns={pronouns}
-            onPronounsChange={this.handlePronounsChange}
-          />
-          <Canvas
-            firstName={firstName}
-            lastName={lastName}
-            pronouns={pronouns}
-          />
-        </div>
+        <Container style={{ marginTop: 36 }}>
+          <Row>
+            <Col>
+              <NameForm
+                firstName={firstName}
+                onFirstNameChange={this.handleFirstNameChange}
+                lastName={lastName}
+                onLastNameChange={this.handleLastNameChange}
+                pronouns={pronouns}
+                onPronounsChange={this.handlePronounsChange}
+              />
+              <Button variant='secondary'>Save Image</Button>
+            </Col>
+            <Col>
+              <Canvas
+                firstName={firstName}
+                lastName={lastName}
+                pronouns={pronouns}
+              />
+            </Col>
+          </Row>
+        </Container>
       </div>
     );
   }

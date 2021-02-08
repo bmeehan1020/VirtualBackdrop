@@ -1,6 +1,6 @@
-import React, { useRef, useEffect } from 'react';
+import React, { useRef, useEffect, forwardRef, useImperativeHandle } from 'react';
 
-function Canvas(props) {
+function Canvas(props, ref) {
     const canvasRef = useRef(null);
     const previewRef = useRef(null);
 
@@ -60,6 +60,23 @@ function Canvas(props) {
         return (window.devicePixelRatio || 1) / backingStore;
     };
 
+    useImperativeHandle(
+        ref,
+        () => ({
+            downloadImage() {
+                const canvas = canvasRef.current;
+                const data = canvas.toDataURL();
+
+                const a = document.createElement('a');
+                a.href = data;
+                a.download = 'wit_background.png';
+                a.click();
+                document.body.appendChild(a);
+                console.log("Save!");
+            }
+        })
+    );
+
     return (
         <div>
             <canvas
@@ -74,5 +91,7 @@ function Canvas(props) {
         </div>
     )
 }
+// eslint-disable-next-line no-func-assign
+Canvas = forwardRef(Canvas);
 
 export default Canvas;

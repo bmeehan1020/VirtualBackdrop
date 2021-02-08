@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/VirtualBackdrop/static/css/main.50d1b506.chunk.css",
+    "main.js": "/VirtualBackdrop/static/js/main.5cb8a5fe.chunk.js",
+    "main.js.map": "/VirtualBackdrop/static/js/main.5cb8a5fe.chunk.js.map",
+    "runtime-main.js": "/VirtualBackdrop/static/js/runtime-main.1d5897e6.js",
+    "runtime-main.js.map": "/VirtualBackdrop/static/js/runtime-main.1d5897e6.js.map",
+    "static/js/2.2a58ba68.chunk.js": "/VirtualBackdrop/static/js/2.2a58ba68.chunk.js",
+    "static/js/2.2a58ba68.chunk.js.map": "/VirtualBackdrop/static/js/2.2a58ba68.chunk.js.map",
+    "static/js/3.f75f732a.chunk.js": "/VirtualBackdrop/static/js/3.f75f732a.chunk.js",
+    "static/js/3.f75f732a.chunk.js.map": "/VirtualBackdrop/static/js/3.f75f732a.chunk.js.map",
+    "index.html": "/VirtualBackdrop/index.html",
+    "static/css/main.50d1b506.chunk.css.map": "/VirtualBackdrop/static/css/main.50d1b506.chunk.css.map",
+    "static/js/2.2a58ba68.chunk.js.LICENSE.txt": "/VirtualBackdrop/static/js/2.2a58ba68.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.1d5897e6.js",
+    "static/js/2.2a58ba68.chunk.js",
+    "static/css/main.50d1b506.chunk.css",
+    "static/js/main.5cb8a5fe.chunk.js"
+  ]
+}

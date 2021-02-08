@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import Form from 'react-bootstrap/Form';
-import Row from 'react-bootstrap/Row';
 
 export default class NameForm extends Component {
     constructor(props) {
@@ -27,27 +26,30 @@ export default class NameForm extends Component {
 
         return (
             <Form>
-                <Form.Group as={Row} controlId="formGroupFirstName">
-                    <Form.Label>First Name</Form.Label>
+                <Form.Row>
                     <Form.Control
                         value={firstName}
                         onChange={this.handleFirstNameChange}
+                        placeholder="First Name"
+                        size='lg'
                         type="text" />
-                </Form.Group>
-                <Form.Group as={Row} controlId="formGroupLastName">
-                    <Form.Label>Last Name</Form.Label>
+                </Form.Row>
+                <Form.Row>
                     <Form.Control
                         value={lastName}
                         onChange={this.handleLastNameChange}
+                        placeholder="Last Name"
+                        size='lg'
                         type="text" />
-                </Form.Group>
-                <Form.Group as={Row} controlId="formGroupPronouns">
-                    <Form.Label>Pronouns (optional) </Form.Label>
+                </Form.Row>
+                <Form.Row>
                     <Form.Control
                         value={pronouns}
                         onChange={this.handlePronounsChange}
+                        placeholder="Pronouns (optional)"
+                        size='lg'
                         type="text" />
-                </Form.Group>
+                </Form.Row>
             </Form>
         )
     }

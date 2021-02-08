@@ -14,33 +14,29 @@ function Canvas(props) {
         context.clearRect(0, 0, window.innerWidth, window.innerHeight);
 
         // draw background image
-        const imgURL = 'https://virtualbackdrop.s3.amazonaws.com/wit_background_5.png';
+        const imgURL = 'https://virtualbackdrop.s3.amazonaws.com/wit_background_4.png';
         const img = new Image();
         img.crossOrigin = 'Anonymous';
         img.src = imgURL;
-        context.drawImage(img, 0, 0, width, height);
+        img.onload = () => {
+            context.drawImage(img, 0, 0, width, height)
 
-        context.textAlign = 'right';
-        context.fillStyle = '#FFF';
-        // drawFirstName
-        context.font = 'bold 150px Arial';
-        context.fillText(props.firstName, width - 50, 150, width / 2);
-        // drawLastName
-        context.font = 'bold 100px Arial';
-        context.fillText(props.lastName, width - 50, 270, width / 2);
-        // drawPronouns
-        if (props.pronouns) {
-            context.font = 'bold 50px Arial';
-            context.fillText(`(${props.pronouns})`, width - 50, 350, width / 2);
-        }
+            // draw name
+            context.textAlign = 'right';
+            context.fillStyle = '#FFF';
+            context.font = 'bold 150px Arial';
+            context.fillText(props.firstName, width - 50, 150, width / 2);
+            context.font = 'bold 100px Arial';
+            context.fillText(props.lastName, width - 50, 270, width / 2);
+            if (props.pronouns) {
+                context.font = 'bold 50px Arial';
+                context.fillText(`(${props.pronouns})`, width - 50, 350, width / 2);
+            }
 
-        //convert to PNG
-        const preview = previewRef.current;
-        preview.innerHTML = '';
-        const canvasImg = new Image();
-        canvasImg.style = "max-width: 100%; max-height: 100%;";
-        canvasImg.src = canvas.toDataURL('image/png');
-        preview.appendChild(canvasImg);
+            // convert canvas into preview image
+            const preview = previewRef.current;
+            preview.src = canvas.toDataURL('image/jpg');
+        };
     })
 
     const rescaleCanvas = (canvas, context) => {
@@ -70,9 +66,10 @@ function Canvas(props) {
                 ref={canvasRef}
                 style={{ width: 1920, height: 1080, display: 'none' }}
             />
-            <div
+            <img
+                alt=''
                 ref={previewRef}
-                style={{ width: 800, height: 600 }}
+                style={{ width: 711, height: 400 }}
             />
         </div>
     )

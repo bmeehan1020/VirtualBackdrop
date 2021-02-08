@@ -1,5 +1,4 @@
 import React, { useRef, useEffect } from 'react';
-import { Button } from 'react-bootstrap';
 
 function Canvas(props) {
     const canvasRef = useRef(null);

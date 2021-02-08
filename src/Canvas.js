@@ -64,8 +64,8 @@ function Canvas(props, ref) {
         ref,
         () => ({
             downloadImage() {
-                const canvas = canvasRef.current;
-                const data = canvas.toDataURL();
+                const preview = previewRef.current;
+                const data = preview.src;
 
                 const a = document.createElement('a');
                 a.href = data;

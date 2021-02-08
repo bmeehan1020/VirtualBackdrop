@@ -5,7 +5,8 @@
   text-align: left;
 }
 
-.App-body {
-  margin: 0px auto;
-  padding: 24px 72px;
+.auto-resize {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
 }

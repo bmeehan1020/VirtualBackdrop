@@ -1,4 +1,5 @@
 import React, { useRef, useEffect } from 'react';
+import { Button } from 'react-bootstrap';
 
 function Canvas(props) {
     const canvasRef = useRef(null);
@@ -35,7 +36,7 @@ function Canvas(props) {
 
             // convert canvas into preview image
             const preview = previewRef.current;
-            preview.src = canvas.toDataURL('image/jpg');
+            preview.src = canvas.toDataURL('image/png');
         };
     })
 
@@ -68,8 +69,8 @@ function Canvas(props) {
             />
             <img
                 alt=''
+                className='auto-resize'
                 ref={previewRef}
-                style={{ width: 711, height: 400 }}
             />
         </div>
     )

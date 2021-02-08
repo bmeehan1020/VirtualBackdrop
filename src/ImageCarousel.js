@@ -9,7 +9,7 @@ function ImageCarousel() {
     };
 
     return (
-        <Carousel activeIndex={index} onSelect={handleSelect}>
+        <Carousel activeIndex={index} onSelect={handleSelect} interval={null}>
             <Carousel.Item>
                 <img
                     className="d-block w-100"

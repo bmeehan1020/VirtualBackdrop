@@ -14,7 +14,7 @@ function Canvas(props, ref) {
         context.clearRect(0, 0, window.innerWidth, window.innerHeight);
 
         // draw background image
-        const imgURL = 'https://virtualbackdrop.s3.amazonaws.com/wit_background_4.png';
+        const imgURL = props.backgroundImage;
         const img = new Image();
         img.crossOrigin = 'Anonymous';
         img.src = imgURL;

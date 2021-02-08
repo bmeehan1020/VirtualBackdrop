@@ -9,6 +9,7 @@ function App() {
   const [firstName, setFirstName] = useState('');
   const [lastName, setLastName] = useState('');
   const [pronouns, setPronouns] = useState('');
+  const [backgroundImage, setBackgroundImage] = useState("https://virtualbackdrop.s3.amazonaws.com/wit_background_1.png");
 
   function handleFirstNameChange(firstName) {
     setFirstName(firstName);
@@ -27,6 +28,10 @@ function App() {
     canvasRef.current.downloadImage();
   }
 
+  function handleBackgroundImageSelect(backgroundImage) {
+    setBackgroundImage(backgroundImage);
+  }
+
   return (
     <div className="App" >
       <header className="App-header">
@@ -43,7 +48,10 @@ function App() {
               pronouns={pronouns}
               onPronounsChange={handlePronounsChange}
             />
-            <ImageCarousel style={{ marginTop: 32 }}></ImageCarousel>
+            <ImageCarousel
+              backgroundImage={backgroundImage}
+              onBackgroundImageSelect={handleBackgroundImageSelect}
+            />
           </Col>
           <Col>
             <Canvas
@@ -51,6 +59,7 @@ function App() {
               firstName={firstName}
               lastName={lastName}
               pronouns={pronouns}
+              backgroundImage={backgroundImage}
             />
             <Button variant='secondary' onClick={onSaveClick}>Save Image</Button>
           </Col>

@@ -15,13 +15,18 @@ function ImageCarousel(props) {
     };
 
     return (
-        <Carousel activeIndex={index} onSelect={handleSelect} interval={null}>
+        <Carousel
+            activeIndex={index}
+            onSelect={handleSelect}
+            interval={null}
+            slide={false} >
             {images.map((imageSrc) =>
                 <Carousel.Item key={imageSrc}>
                     <img
                         className="d-block w-100"
                         src={imageSrc}
-                        alt="First slide"
+                        alt=""
+                        style={{ padding: 8 }}
                     />
                 </Carousel.Item>
             )}

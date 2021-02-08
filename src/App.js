@@ -48,7 +48,14 @@ function App() {
           </h1>
         </Navbar.Brand>
       </Navbar>
-      <Container style={{ marginTop: 36 }}>
+      <Container>
+        <Row>
+          <Col>
+            <h3 style={{ margin: 24 }} className="text-center">
+              Create an approved virtual background for use in classroom Zoom sessions.
+          </h3>
+          </Col>
+        </Row>
         <Row>
           <Col>
             <NameForm
@@ -59,24 +66,35 @@ function App() {
               pronouns={pronouns}
               onPronounsChange={handlePronounsChange}
             />
+            <h4 style={{ paddingLeft: 8, paddingTop: 24, paddingBottom: 0 }}>Choose a Background:</h4>
             <ImageCarousel
+              style={{ padding: 8 }}
               backgroundImage={backgroundImage}
               onBackgroundImageSelect={handleBackgroundImageSelect}
             />
           </Col>
-          <Col>
-            <Canvas
-              ref={canvasRef}
-              firstName={firstName}
-              lastName={lastName}
-              pronouns={pronouns}
-              backgroundImage={backgroundImage}
-            />
-            <Button variant='secondary' onClick={onSaveClick}>Save Image</Button>
+          <Col style={{ marginLeft: 24 }}>
+            <Row>
+              <Canvas
+                ref={canvasRef}
+                firstName={firstName}
+                lastName={lastName}
+                pronouns={pronouns}
+                backgroundImage={backgroundImage}
+              />
+            </Row>
+            <Row>
+              <Button
+                variant='secondary'
+                onClick={onSaveClick}
+                style={{ marginTop: 24, marginLeft: 'auto', marginRight: 'auto', alignContent: 'center' }}>
+                Save Image
+              </Button>
+            </Row>
           </Col>
         </Row>
       </Container>
-    </div>
+    </div >
   );
 }
 

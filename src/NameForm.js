@@ -26,7 +26,7 @@ export default class NameForm extends Component {
 
         return (
             <Form>
-                <Form.Row>
+                <Form.Row style={{ padding: 8 }}>
                     <Form.Control
                         value={firstName}
                         onChange={this.handleFirstNameChange}
@@ -34,7 +34,7 @@ export default class NameForm extends Component {
                         size='lg'
                         type="text" />
                 </Form.Row>
-                <Form.Row>
+                <Form.Row style={{ padding: 8 }}>
                     <Form.Control
                         value={lastName}
                         onChange={this.handleLastNameChange}
@@ -42,7 +42,7 @@ export default class NameForm extends Component {
                         size='lg'
                         type="text" />
                 </Form.Row>
-                <Form.Row>
+                <Form.Row style={{ padding: 8 }}>
                     <Form.Control
                         value={pronouns}
                         onChange={this.handlePronounsChange}

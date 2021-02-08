@@ -2,6 +2,7 @@ import './App.css';
 import React, { useState, useRef } from 'react'
 import NameForm from './NameForm';
 import Canvas from './Canvas';
+import ImageCarousel from './ImageCarousel';
 import { Container, Row, Col, Button } from 'react-bootstrap';
 
 function App() {
@@ -42,7 +43,7 @@ function App() {
               pronouns={pronouns}
               onPronounsChange={handlePronounsChange}
             />
-            <Button variant='secondary' onClick={onSaveClick}>Save Image</Button>
+            <ImageCarousel style={{ marginTop: 32 }}></ImageCarousel>
           </Col>
           <Col>
             <Canvas
@@ -51,6 +52,7 @@ function App() {
               lastName={lastName}
               pronouns={pronouns}
             />
+            <Button variant='secondary' onClick={onSaveClick}>Save Image</Button>
           </Col>
         </Row>
       </Container>

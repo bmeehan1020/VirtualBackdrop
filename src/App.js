@@ -1,5 +1,5 @@
 import './App.css';
-import React, { useState } from 'react'
+import React, { useState, useRef } from 'react'
 import NameForm from './NameForm';
 import Canvas from './Canvas';
 import { Container, Row, Col, Button } from 'react-bootstrap';
@@ -21,6 +21,11 @@ function App() {
     setPronouns(pronouns);
   }
 
+  const canvasRef = useRef(null);
+  const onSaveClick = () => {
+    canvasRef.current.downloadImage();
+  }
+
   return (
     <div className="App" >
       <header className="App-header">
@@ -37,10 +42,11 @@ function App() {
               pronouns={pronouns}
               onPronounsChange={handlePronounsChange}
             />
-            <Button variant='secondary'>Save Image</Button>
+            <Button variant='secondary' onClick={onSaveClick}>Save Image</Button>
           </Col>
           <Col>
             <Canvas
+              ref={canvasRef}
               firstName={firstName}
               lastName={lastName}
               pronouns={pronouns}

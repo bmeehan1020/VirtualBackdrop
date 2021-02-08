@@ -3,7 +3,7 @@ import React, { useState, useRef } from 'react'
 import NameForm from './NameForm';
 import Canvas from './Canvas';
 import ImageCarousel from './ImageCarousel';
-import { Container, Row, Col, Button } from 'react-bootstrap';
+import { Container, Row, Col, Button, Navbar } from 'react-bootstrap';
 
 function App() {
   const [firstName, setFirstName] = useState('');
@@ -34,9 +34,20 @@ function App() {
 
   return (
     <div className="App" >
-      <header className="App-header">
-        <h1>WIT Remote Background Generator</h1>
-      </header>
+      <Navbar bg="dark" variant="dark">
+        <Navbar.Brand>
+          <h1>
+            <img
+              alt="logo"
+              src={process.env.PUBLIC_URL + '/wit_logo.png'}
+              width="50"
+              height="50"
+              className="d-inline-block align-center"
+            />
+            Remote Classroom Background Generator
+          </h1>
+        </Navbar.Brand>
+      </Navbar>
       <Container style={{ marginTop: 36 }}>
         <Row>
           <Col>

@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/VirtualBackdrop/static/css/main.2fad989d.chunk.css",
-    "main.js": "/VirtualBackdrop/static/js/main.ca744c8b.chunk.js",
-    "main.js.map": "/VirtualBackdrop/static/js/main.ca744c8b.chunk.js.map",
+    "main.js": "/VirtualBackdrop/static/js/main.65d01de0.chunk.js",
+    "main.js.map": "/VirtualBackdrop/static/js/main.65d01de0.chunk.js.map",
     "runtime-main.js": "/VirtualBackdrop/static/js/runtime-main.3b7089ab.js",
     "runtime-main.js.map": "/VirtualBackdrop/static/js/runtime-main.3b7089ab.js.map",
     "static/js/2.4eabe148.chunk.js": "/VirtualBackdrop/static/js/2.4eabe148.chunk.js",
@@ -17,6 +17,6 @@
     "static/js/runtime-main.3b7089ab.js",
     "static/js/2.4eabe148.chunk.js",
     "static/css/main.2fad989d.chunk.css",
-    "static/js/main.ca744c8b.chunk.js"
+    "static/js/main.65d01de0.chunk.js"
   ]
 }

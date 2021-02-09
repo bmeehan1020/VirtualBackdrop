@@ -9,7 +9,7 @@ function App() {
   const [firstName, setFirstName] = useState('');
   const [lastName, setLastName] = useState('');
   const [pronouns, setPronouns] = useState('');
-  const [backgroundImage, setBackgroundImage] = useState("https://virtualbackdrop.s3.amazonaws.com/wit_background_1.png");
+  const [backgroundImage, setBackgroundImage] = useState(process.env.PUBLIC_URL + '/wit_background_1.png');
 
   function handleFirstNameChange(firstName) {
     setFirstName(firstName);
